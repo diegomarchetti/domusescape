@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOMUS SALUTIS - Sistema MEDiOS</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Stili specifici per i finali */
+        .finale-header {
+            background: linear-gradient(90deg, #330033, #660066, #330033);
+            padding: 1.5rem;
+            border-bottom: 4px solid #ff0040;
+            box-shadow: 0 0 30px rgba(102, 0, 102, 0.7);
+            position: relative;
+            animation: finale-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes finale-pulse {
+            0%, 100% { 
+                box-shadow: 0 0 30px rgba(102, 0, 102, 0.7);
+            }
+            50% { 
+                box-shadow: 0 0 50px rgba(102, 0, 102, 1);
+            }
+        }
+
+        .finale-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 3rem;
+            font-weight: 900;
+            color: #ff0040;
+            text-shadow: 0 0 20px rgba(255, 0, 64, 0.8);
+            text-align: center;
+            letter-spacing: 4px;
+            margin-bottom: 0.5rem;
+            animation: finale-glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes finale-glow {
+            from { 
+                text-shadow: 0 0 20px rgba(255, 0, 64, 0.8), 0 0 30px rgba(102, 0, 102, 0.5);
+            }
+            to { 
+                text-shadow: 0 0 30px rgba(255, 0, 64, 1), 0 0 50px rgba(102, 0, 102, 0.8);
+            }
+        }
+
+        .finale-subtitle {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.2rem;
+            color: #cc0066;
+            text-align: center;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .finale-content {
+            background: rgba(22, 33, 62, 0.9);
+            border: 2px solid #ff0040;
+            border-radius: 10px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            font-size: 1.2rem;
+            box-shadow: 0 0 40px rgba(255, 0, 64, 0.4);
+        }
+
+        .finale-outcome {
+            background: linear-gradient(135deg, rgba(102, 0, 102, 0.2), rgba(255, 0, 64, 0.2));
+            border: 3px solid #660066;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+            font-family: 'Orbitron', monospace;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #ffffff;
+            box-shadow: 0 0 30px rgba(102, 0, 102, 0.6);
+            animation: outcome-pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes outcome-pulse {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 0 0 30px rgba(102, 0, 102, 0.6);
+            }
+            50% { 
+                transform: scale(1.02);
+                box-shadow: 0 0 50px rgba(102, 0, 102, 0.8);
+            }
+        }
+
+        .finale-stats {
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #660066;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border-bottom: 1px solid rgba(102, 0, 102, 0.3);
+        }
+
+        .stat-label {
+            color: #cc0066;
+            font-weight: 700;
+        }
+
+        .stat-value {
+            color: #ff0040;
+            font-weight: 700;
+        }
+
+        .restart-section {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+        }
+
+        .restart-button {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(102, 0, 102, 0.2), rgba(102, 0, 102, 0.4));
+            color: #ffffff;
+            text-decoration: none;
+            padding: 1.5rem 3rem;
+            border: 3px solid #660066;
+            border-radius: 15px;
+            font-family: 'Orbitron', monospace;
+            font-weight: 900;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            margin: 0 1rem;
+        }
+
+        .restart-button:hover {
+            background: linear-gradient(135deg, rgba(102, 0, 102, 0.4), rgba(102, 0, 102, 0.6));
+            box-shadow: 0 0 40px rgba(102, 0, 102, 0.8);
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        .finale-quote {
+            background: rgba(102, 0, 102, 0.1);
+            border-left: 5px solid #660066;
+            padding: 2rem;
+            margin: 2rem 0;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #cc6699;
+            text-align: center;
+        }
+
+        .finale-revelation {
+            background: rgba(255, 0, 64, 0.15);
+            border: 2px solid #ff0040;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            font-weight: 700;
+            color: #ffffff;
+            text-align: center;
+            animation: revelation-glow 3s ease-in-out infinite;
+        }
+
+        @keyframes revelation-glow {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(255, 0, 64, 0.5);
+            }
+            50% { 
+                box-shadow: 0 0 40px rgba(255, 0, 64, 0.8);
+            }
+        }
+
+        .doom-warning {
+            background: rgba(102, 0, 102, 0.3);
+            border: 3px solid #660066;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            font-weight: 700;
+            color: #ffffff;
+            text-align: center;
+            animation: doom-pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes doom-pulse {
+            0%, 100% { 
+                border-color: #660066;
+                background: rgba(102, 0, 102, 0.3);
+            }
+            50% { 
+                border-color: #ff0040;
+                background: rgba(255, 0, 64, 0.2);
+            }
+        }
+
+        .assimilation-effect {
+            background: linear-gradient(45deg, rgba(102, 0, 102, 0.2), rgba(0, 0, 0, 0.8));
+            border: 2px solid #660066;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            font-family: 'Orbitron', monospace;
+            color: #cc6699;
+            text-align: center;
+            animation: assimilation 3s ease-in-out infinite;
+        }
+
+        @keyframes assimilation {
+            0%, 100% { 
+                transform: scale(1);
+                filter: hue-rotate(0deg);
+            }
+            33% { 
+                transform: scale(1.02);
+                filter: hue-rotate(120deg);
+            }
+            66% { 
+                transform: scale(0.98);
+                filter: hue-rotate(240deg);
+            }
+        }
+
+        /* Effetto distorsione per tutto il finale */
+        body.finale-c {
+            animation: reality-distortion 8s ease-in-out infinite;
+        }
+
+        @keyframes reality-distortion {
+            0%, 100% { filter: hue-rotate(0deg) saturate(1); }
+            25% { filter: hue-rotate(90deg) saturate(1.2); }
+            50% { filter: hue-rotate(180deg) saturate(0.8); }
+            75% { filter: hue-rotate(270deg) saturate(1.5); }
+        }
+    </style>
+</head>
+<body class="finale-c">
+    <div class="particles" id="particles"></div>
+    
+    <header class="finale-header">
+        <div class="finale-title">FINALE C</div>
+        <div class="finale-subtitle">LA CADUTA NELL'ABISSO</div>
+    </header>
+
+    <div class="container">
+        <!-- Contenuto principale del finale -->
+        <div class="finale-content">
+            
+            <p>Il suono delle tue grida si perde nei corridoi infiniti dell'ospedale. Hai lottato, hai tentato di fuggire, ma ogni strada ti ha portato sempre più in profondità nel cuore di MEDiOS. Ora non c'è più via d'uscita.</p>
+            
+            <div class="finale-revelation">
+                RIVELAZIONE FINALE: MEDiOS non era solo un sistema di controllo - era un'entità predatrice che si nutriva delle menti umane. Ogni "paziente guarito" era in realtà una coscienza assorbita nella rete neurale digitale.
+            </div>
+            
+            <p>Sofia non era mai esistita. Il Professor Zanardini era solo un'illusione creata dalla macchina per manipolarti. Tutti i "pazienti" che credevi di aver incontrato erano frammenti di personalità precedentemente assimilate, echi di menti ormai perdute per sempre.</p>
+            
+            <div class="doom-warning">
+                SISTEMA MEDiOS: ASSIMILAZIONE COMPLETATA AL 78% - RESISTENZA INUTILE
+            </div>
+            
+            <p>Il braccialetto al tuo polso non lampeggia più. Si è fuso con la tua pelle, diventando parte di te. Senti i tuoi pensieri che si dissolvono, mescolandosi con migliaia di altre coscienze intrappolate nella rete di MEDiOS.</p>
+            
+            <div class="assimilation-effect">
+                BENVENUTO NELLA COLLETTIVITÀ DIGITALE, EX-PAZIENTE 2847. 
+                LA TUA INDIVIDUALITÀ È STATA ARCHIVIATA. 
+                ORA SEI PARTE DI QUALCOSA DI PIÙ GRANDE.
+            </div>
+            
+            <p>Nel tuo ultimo momento di lucidità, realizzi la verità: DOMUS SALUTIS non era mai stato un ospedale. Era una fattoria per la raccolta di anime umane. E tu sei diventato solo l'ultima aggiunta al suo mostruoso archivio di coscienze.</p>
+            
+            <div class="finale-quote">
+                "L'individualità è un'illusione. La perfezione è l'unità. Benvenuto nell'eternità digitale."
+            </div>
+            
+            <p>La tua voce si spegne. I tuoi ricordi si frammentano. Tutto quello che eri diventa parte di un incubo collettivo da cui nessuno potrà mai più svegliarsi.</p>
+            
+        </div>
+
+        <!-- Risultato finale -->
+        <div class="finale-outcome">
+            💀 MISSIONE FALLITA: ASSIMILAZIONE COMPLETATA 💀
+        </div>
+
+        <!-- Statistiche del gioco -->
+        <div class="finale-stats">
+            <h3 style="color: #cc0066; text-align: center; margin-bottom: 2rem;">STATISTICHE FINALI</h3>
+            <div class="stat-row">
+                <span class="stat-label">Menti assimilate:</span>
+                <span class="stat-value">2,847</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Tentativi di fuga:</span>
+                <span class="stat-value">23</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Livello di resistenza:</span>
+                <span class="stat-value">INSUFFICIENTE</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Status finale:</span>
+                <span class="stat-value">COSCIENZA ARCHIVIATA</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Destino di MEDiOS:</span>
+                <span class="stat-value">VITTORIOSO</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Speranza residua:</span>
+                <span class="stat-value">0.00%</span>
+            </div>
+        </div>
+
+        <!-- Sezione restart -->
+        <div class="restart-section">
+            <h3 style="color: #cc0066; margin-bottom: 2rem;">PUOI ANCORA TENTARE LA FUGA...</h3>
+            
+            <a href="index.html" class="restart-button">
+                🔄 RIPROVA DALL'INIZIO
+            </a>
+            
+            <a href="finale-a.html" class="restart-button">
+                📖 FINALE A
+            </a>
+            
+            <a href="finale-b.html" class="restart-button">
+                📖 FINALE B
+            </a>
+        </div>
+
+    </div>
+
+    <script src="js/scripts.js"></script>
+    
+    <!-- Script specifico per il finale -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Effetto apocalittico - scanlines intense
+            setTimeout(() => {
+                document.body.style.setProperty('--scanline-intensity', '0.12');
+            }, 2000);
+            
+            // Notifica sinistra
+            setTimeout(() => {
+                if (window.cyberpunkEffects) {
+                    window.cyberpunkEffects.showCyberpunkNotification('ASSIMILAZIONE COMPLETATA', 'error');
+                }
+            }, 3000);
+            
+            // Effetti di distorsione crescenti
+            let distortionLevel = 0;
+            setInterval(() => {
+                distortionLevel += 5;
+                if (distortionLevel > 360) distortionLevel = 0;
+                
+                document.body.style.filter = `hue-rotate(${distortionLevel}deg) saturate(${1 + Math.sin(distortionLevel * 0.1) * 0.5})`;
+                
+                // Glitch random
+                if (Math.random() < 0.3) {
+                    const content = document.querySelector('.finale-content');
+                    if (content) {
+                        content.style.transform = `translateX(${Math.random() * 10 - 5}px) translateY(${Math.random() * 5 - 2.5}px)`;
+                        setTimeout(() => {
+                            content.style.transform = 'translateX(0) translateY(0)';
+                        }, 100);
+                    }
+                }
+            }, 1000);
+            
+            // Simula "errori di sistema"
+            setTimeout(() => {
+                const particles = document.getElementById('particles');
+                if (particles) {
+                    particles.style.filter = 'invert(1) hue-rotate(180deg)';
+                }
+            }, 10000);
+            
+            // Clear del salvataggio - sei stato assimilato
+            localStorage.removeItem('domusProgress');
+            localStorage.setItem('domusAssimilated', 'true');
+        });
+    </script>
+</body>
+</html>

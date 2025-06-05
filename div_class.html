@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOMUS SALUTIS - Preview Formattazione CSS</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .preview-label {
+            background: rgba(255, 255, 0, 0.2);
+            border: 1px dashed #ffff00;
+            padding: 0.5rem;
+            margin: 1rem 0 0.5rem 0;
+            font-family: 'Orbitron', monospace;
+            font-size: 0.9rem;
+            color: #ffff00;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .preview-section {
+            margin-bottom: 3rem;
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <header class="medical-header">
+        <div class="hospital-id">DOMUS SALUTIS</div>
+        <div class="system-status">Sistema MEDiOS Attivo - Preview Formattazione CSS</div>
+    </header>
+
+    <div class="container">
+        
+        <!-- HEADER SEZIONE -->
+        <div class="preview-section">
+            <div class="preview-label">CLASS: section-header</div>
+            <div class="section-header">
+                <div class="section-number">SEZIONE X</div>
+                <div class="section-title">TITOLO DELLA SEZIONE</div>
+                <div class="section-subtitle">Sottotitolo della sezione</div>
+            </div>
+        </div>
+
+        <!-- CONTENUTO PRINCIPALE -->
+        <div class="preview-section">
+            <div class="preview-label">CLASS: content</div>
+            <div class="content">
+                <div class="preview-label">CLASS: p (paragrafo normale)</div>
+                <p>Questo è un paragrafo normale. Il testo viene visualizzato con il font Roboto Mono e il colore verde cyberpunk. Questo è l'elemento più comune per il contenuto delle sezioni.</p>
+                
+                <div class="preview-label">CLASS: medical-alert</div>
+                <div class="medical-alert">
+                    MEDICAL-ALERT: Questo è un alert medico con sfondo rosso e bordo pulsante
+                </div>
+                
+                <div class="preview-label">CLASS: ai-response</div>
+                <div class="ai-response">
+                    AI-RESPONSE: Questa è una risposta dell'intelligenza artificiale con sfondo blu e bordo ciano
+                </div>
+                
+                <div class="preview-label">CLASS: dialogue</div>
+                <div class="dialogue">
+                    DIALOGUE: Questo è un dialogo con sfondo giallo e bordo laterale
+                </div>
+                
+                <div class="preview-label">CLASS: code-block</div>
+                <div class="code-block">CODE-BLOCK: Questo è un blocco di codice
+Sistema operativo: MEDiOS v2.1
+Status: ATTIVO
+Protocollo: Emergenza 7-A</div>
+            </div>
+        </div>
+
+        <!-- PULSANTI SCELTE -->
+        <div class="preview-section">
+            <div class="preview-label">CLASS: choices-container</div>
+            <div class="choices-container">
+                <div class="preview-label">CLASS: choice-button</div>
+                <a href="#" class="choice-button">
+                    <span class="choice-label">SCELTA A</span>
+                    <span class="choice-text">CHOICE-BUTTON: Questo è un pulsante di scelta con effetti hover</span>
+                </a>
+                
+                <a href="#" class="choice-button">
+                    <span class="choice-label">SCELTA B</span>
+                    <span class="choice-text">CHOICE-BUTTON: Secondo pulsante con animazioni cyberpunk</span>
+                </a>
+                
+                <a href="#" class="choice-button">
+                    <span class="choice-label">SCELTA C</span>
+                    <span class="choice-text">CHOICE-BUTTON: Terzo pulsante con effetti di luce</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- ELEMENTI SPECIALI PAGINA PREMESSA -->
+        <div class="preview-section">
+            <div class="preview-label">CLASS: main-title (per pagina premessa)</div>
+            <div class="main-title">
+                <div class="title">DOMUS</div>
+                <div class="subtitle">SUBTITLE: Sistema di Riabilitazione Avanzato</div>
+                <div class="tagline">TAGLINE: Un'avventura cyberpunk interattiva</div>
+                <div class="year">2045</div>
+            </div>
+        </div>
+
+        <div class="preview-section">
+            <div class="preview-label">CLASS: premise-section</div>
+            <div class="premise-section">
+                <div class="premise-title">PREMISE-TITLE: PREMESSA</div>
+                <div class="premise-content">
+                    <p>PREMISE-CONTENT: Questo è il contenuto della premessa con formattazione speciale.</p>
+                    <p>Puoi usare <span class="highlight">HIGHLIGHT: testo evidenziato</span> e <span class="emphasis">EMPHASIS: testo enfatizzato</span>.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="preview-section">
+            <div class="preview-label">CLASS: start-section</div>
+            <div class="start-section">
+                <a href="#" class="start-button">START-BUTTON: INIZIA AVVENTURA</a>
+            </div>
+        </div>
+
+        <!-- SISTEMA DI SALVATAGGIO -->
+        <div class="preview-section">
+            <div class="preview-label">CLASS: resume-popup (sistema salvataggio)</div>
+            <div class="resume-popup" style="position: relative; height: auto;">
+                <div class="resume-content">
+                    <h3>SESSIONE TROVATA</h3>
+                    <p>È stata rilevata una sessione precedente:</p>
+                    <div class="progress-info">
+                        <span class="progress-section">SEZIONE 15</span>
+                        <span class="progress-time">Salvata il 04/06/2025 alle 14:30</span>
+                    </div>
+                    <div class="resume-buttons">
+                        <button class="resume-btn">RIPRENDI AVVENTURA</button>
+                        <button class="new-game-btn">NUOVA AVVENTURA</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- WARNING -->
+        <div class="preview-section">
+            <div class="preview-label">CLASS: warning</div>
+            <div class="warning">
+                WARNING: Questo è un messaggio di avvertimento con sfondo rosso tenue
+            </div>
+        </div>
+
+        <!-- EFFETTI PARTICELLE -->
+        <div class="preview-section">
+            <div class="preview-label">EFFETTI: particles (sfondo animato)</div>
+            <p>Le particelle animate sono visibili sullo sfondo di tutta la pagina</p>
+        </div>
+
+        <!-- ELEMENTI CON ANIMAZIONI -->
+        <div class="preview-section">
+            <div class="preview-label">ANIMAZIONI: elementi con fade-in</div>
+            <div class="fade-in">
+                <p>FADE-IN: Questo elemento ha un'animazione di comparsa graduale</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/scripts.js"></script>
+    
+    <!-- Script per mostrare gli effetti -->
+    <script>
+        // Aggiungi alcuni effetti per il preview
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Effetto glitch occasionale sui choice buttons
+            setInterval(() => {
+                const buttons = document.querySelectorAll('.choice-button');
+                if (Math.random() < 0.3) {
+                    buttons.forEach(button => {
+                        button.style.transform = 'translateX(' + (Math.random() * 4 - 2) + 'px)';
+                        setTimeout(() => {
+                            button.style.transform = 'translateX(0)';
+                        }, 100);
+                    });
+                }
+            }, 5000);
+            
+            // Effetto pulse sui medical alerts
+            setInterval(() => {
+                const alerts = document.querySelectorAll('.medical-alert');
+                alerts.forEach(alert => {
+                    alert.style.boxShadow = '0 0 30px rgba(255, 0, 64, 0.8)';
+                    setTimeout(() => {
+                        alert.style.boxShadow = '0 0 10px rgba(255, 0, 64, 0.5)';
+                    }, 500);
+                });
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
